@@ -4222,7 +4222,11 @@ int main(int argc, char **argv)
 
 		for (u = 0; u < len; ++u) {
 #ifdef DEBUG
-			printf("%s:\n", c[u].File);
+			if( c[u].File ) {
+				printf("%s:\n", c[u].File);
+			} else {
+				printf("EOL\n");
+			}
 #endif
 			switch (c[u].Type) {
 				case F:
